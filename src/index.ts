@@ -2,7 +2,7 @@ import axios from 'axios'
 
 const API_URL = 'http://colormind.io/api/'
 
-const generate = async (input: string[] = [], model: 'ui' | 'default' = 'default') => {
+const generate = async (input: string[] = [], model: 'ui' | 'default' = 'default'): Promise<string[]> => {
   const response = await axios.post(API_URL, { model, input: padWith(input).map(hexToDec) })
   return response
     .data

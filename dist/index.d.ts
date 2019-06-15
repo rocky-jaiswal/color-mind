@@ -1,2 +1,2 @@
-declare const generate: (input?: string[], model?: "ui" | "default") => Promise<any>;
+declare const generate: (input?: string[], model?: "ui" | "default") => Promise<string[]>;
 export default generate;
