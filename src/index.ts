@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { validateInput, padWith, hexToDec } from './utils'
 
 const API_URL = 'http://colormind.io/api/'
 
@@ -11,31 +12,6 @@ const generate = async (input: string[] = [], model: 'ui' | 'default' = 'default
     .result
     .map((rgb: number[]) => rgb.map((x) => x.toString(16)).join(''))
     .map((str: string) => `#${str}`)
-}
-
-const padWith = (arr: string[], len: number = 5, elem: string = 'N') => {
-  for (let i = 0; i < len; i++) {
-    if (!arr[i]) { arr.push(elem) }
-  }
-  return arr
-}
-
-const hexToDec = (hex: string) => {
-  if (hex === 'N') {
-    return 'N'
-  }
-  return [parseInt(hex.substr(1, 2), 16), parseInt(hex.substr(3, 2), 16), parseInt(hex.substr(5, 2), 16)]
-}
-
-const validateInput = (input: string[]) => {
-  if (!input || input.length > 5) {
-    throw new Error('Input array cannot be undefined, null or longer than 5 strings.')
-  }
-  input.forEach((inp: string) => {
-    if (inp !== 'N' && !inp.match(/^#([a-f]|\d){6}$/)) {
-      throw new Error('Input colors have to be of format "#a1a1a1"')
-    }
-  })
 }
 
 export default generate
