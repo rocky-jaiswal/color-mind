@@ -1,6 +1,6 @@
 {
   "name": "color-mind",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Wrapper for colormind.io",
   "main": "dist/index.js",
   "author": "rocky.jaiswal@gmail.com",
