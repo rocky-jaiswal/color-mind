@@ -1,4 +1,4 @@
-#Color-Mind
+# Color-Mind
 
 Thin Node.js wrapper over [http://colormind.io](http://colormind.io).
 
