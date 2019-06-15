@@ -1,6 +1,6 @@
 {
   "name": "color-mind",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Wrapper for colormind.io",
   "main": "dist/index.js",
   "author": "rocky.jaiswal@gmail.com",
@@ -13,7 +13,7 @@
     "watch-node": "npx nodemon dist/index.js",
     "tslint": "tslint -c tslint.json -p tsconfig.json",
     "dev": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Nodemon\" -c \"yellow.bold,green.bold\" \"npm run watch-ts\" \"npm run watch-node\"",
-    "build": "tsc"
+    "build": "rm -rf dist/* && tsc"
   },
   "devDependencies": {
     "@types/axios": "^0.14.0",
