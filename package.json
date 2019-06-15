@@ -1,0 +1,28 @@
+{
+  "name": "color-mind",
+  "version": "0.0.1",
+  "description": "Wrapper for colormind.io",
+  "main": "index.js",
+  "author": "rocky.jaiswal@gmail.com",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "run": "node dist/index.js",
+    "watch-ts": "tsc -w",
+    "watch-node": "npx nodemon dist/index.js",
+    "tslint": "tslint -c tslint.json -p tsconfig.json",
+    "dev": "concurrently -k -p \"[{name}]\" -n \"TypeScript,Nodemon\" -c \"yellow.bold,green.bold\" \"npm run watch-ts\" \"npm run watch-node\"",
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "@types/axios": "^0.14.0",
+    "concurrently": "^4.1.0",
+    "nodemon": "^1.19.1",
+    "tslint": "^5.17.0",
+    "tslint-config-standard": "^8.0.1",
+    "typescript": "^3.5.2"
+  },
+  "dependencies": {
+    "axios": "^0.19.0"
+  }
+}
